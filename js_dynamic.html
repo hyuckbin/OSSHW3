@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Web Page</title>
+  <style>
+    .b1 {
+      background-color: blue;
+      color: white;
+    }
+
+    .b2 {
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Dynamic Web Page</h1>
+  <form onsubmit="return false">
+    <label for="text-input"></label>
+    <input id="text-input" name="f_name" type="text">
+
+    <button type="button" class="b1">추가</button>
+    <button type="button" class="b2">삭제</button>
+  </form>
+
+  <ul id="output"></ul>
+
+  <script>
+    window.onload = function () {
+      const inputE = document.getElementById('text-input');
+      const addButton = document.querySelector('.b1');
+      const deleteButton = document.querySelector('.b2');
+      const outputE = document.getElementById('output');
+
+      addButton.addEventListener('click', function () {
+        const inputValue = inputE.value.trim();
+
+        if (inputValue !== '') {
+          // 입력값을 콤마 기준으로 나누기
+          const names = inputValue.split(',');
+
+          names.forEach(function (name) {
+            const trimmedName = name.trim();
+            if (trimmedName !== '') {
+              outputE.innerHTML += `<li>${trimmedName}</li>`;
+            }
+          });
+
+          inputE.value = ''; 
+        }
+      });
+
+      deleteButton.addEventListener('click', function () {
+        if (outputE.lastChild) {
+          outputE.removeChild(outputE.lastChild);
+        }
+      });
+    };
+  </script>
+</body>
+
+</html>
