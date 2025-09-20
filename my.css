@@ -1,0 +1,61 @@
+:root {
+    --kyobo-green: #196734;
+    --kyobo-dark-green: #14522a;
+    --kyobo-gray: #6c757d;
+}
+
+header h1 {
+    color: var(--kyobo-green);
+    font-weight: bold;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--kyobo-green) !important;
+}
+
+/* 검색창 */
+#bookSearch {
+    border: 2px solid var(--kyobo-green);
+    border-radius: 20px;
+    overflow: hidden;
+}
+#bookSearch input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#bookSearch button {
+  background-color: var(--kyobo-green);
+  color: white;
+  border: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#bookSearch button:hover {
+  background-color: var(--kyobo-dark-green);
+}
+
+.btn-primary {
+    background-color: var(--kyobo-green) !important;
+    border-color: var(--kyobo-green) !important;
+}
+.btn-primary:hover {
+    background-color: var(--kyobo-dark-green) !important;
+    border-color: var(--kyobo-dark-green) !important;
+}
+
+.table td a {
+    color: var(--kyobo-green);
+}
+
+footer {
+    font-size: 0.9rem;
+    color: var(--kyobo-gray);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
